@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数柯里化</title>
+</head>
+<body>
+  <script src="./index.js"></script>
+  <script>
+    function sum(a, b, c) {
+      return a + b + c;
+    }
+
+    let currySum = curry(sum, 1);
+    let currySum1 = currySum(2);
+    console.log(currySum1(3));
+  </script>
+</body>
+</html>
