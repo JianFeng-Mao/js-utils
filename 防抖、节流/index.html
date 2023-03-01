@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖节流</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="inp">
+  </div>
+  <script src="./index.js"></script>
+  <script>
+    const inpDom = document.getElementById('inp');
+    const handleInp = (e) => {
+      console.log(e.target.value);
+    }
+    inpDom.addEventListener('input', debounce(handleInp, 2000))
+
+    let count = 0;
+    const handleResize = function() {
+      count ++;
+      console.log('resize： ' + count);
+    }
+    window.onresize = throttle(handleResize, 1000, false);
+  </script>
+</body>
+</html>
