@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深浅克隆</title>
+</head>
+<body>
+  <script src="index.js"></script>
+  <script>
+    let o1 = {
+      a: 1,
+      b: [1, 2, 3],
+      c: {
+        name: 'c'
+      },
+    }
+    let sCopy = shallowClone(o1);
+    sCopy.a = 2;
+    sCopy.b.push(4);
+    sCopy.c.age = 12;
+    // 浅克隆，克隆后的对象修改值为引用类型的属性时，源对象中的属性值也会改变
+    console.log(sCopy);
+    console.log(o1);
+
+    let o2 = {
+      a: 1,
+      b: [1, 2, 3],
+      c: {
+        name: 'c'
+      },
+    }
+    let dCopy = deepClone(o2);
+    dCopy.a = 2;
+    dCopy.b.push(4);
+    dCopy.c.age = 12;
+    // 深克隆，源对象中的引用类型属性也会被克隆，克隆后的对象修改属性值不会影响源对象上的属性
+    console.log(dCopy);
+    console.log(o2);
+
+  </script>
+</body>
+</html>
