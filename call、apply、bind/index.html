@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call、apply、bind</title>
+</head>
+<body>
+  <script src="./index.js"></script>
+  <script>
+    window.name = 'window';
+    let obj = {
+      name: 'obj'
+    }
+    function say(arg1, arg2) {
+      console.log(this);
+      console.log('my name is ' + this.name);
+      console.log('arg1: ' + arg1 + '; arg2: ' + arg2);
+      return arg1 + arg2;
+    }
+
+    /*
+      let res = say.call(obj, 1, 2);
+      console.log(res);
+      say.call(2, 1, 2);
+      say.call();
+
+      let res1 = say.myCall(obj, 1, 2);
+      console.log(res1);
+      say.myCall(2, 1, 2);
+      say.myCall();
+    */
+
+    /*
+      let res = say.apply(obj, [1, 2]);
+      console.log(res);
+      say.apply(2, [1, 2]);
+      say.apply();
+
+      let res1 = say.myApply(obj, [1, 2]);
+      console.log(res1);
+      say.myApply(2, [1, 2]);
+      say.myApply();
+    */
+
+      // window.d = 5;
+      // obj.d = 6;
+      // function sum(a, b, c) {
+      //   console.log(this);
+      //   return a + b + c + this.d;
+      // }
+    /*
+      let bindSum = sum.bind(obj, 1, 2);
+      console.log(bindSum(3));
+
+      let bindSum2 = sum.bind(2, 1, 2);
+      console.log(bindSum2(3));
+
+      let bindSum3 = sum.bind();
+      console.log(bindSum3(1, 2, 3));
+      
+      let myBindSum = sum.myBind(obj, 1, 2);
+      console.log(myBindSum(3));
+
+      let myBindSum2 = sum.myBind(2, 1, 2);
+      console.log(myBindSum2(3));
+
+      let myBindSum3 = sum.myBind();
+      console.log(myBindSum3(1, 2, 3));
+   */
+  </script>
+</body>
+</html>
